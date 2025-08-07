@@ -26,7 +26,9 @@ db.query(`
     console.log('✅ voltages table ensured');
   }
 });
-
+app.get('/', (req, res) => {
+  res.send('Welcome to the ESP32 Voltage Monitoring API');  });
+  
 // POST: Receive data from ESP32
 app.post('/api/voltages', (req, res) => {
   const { generationVoltage, batteryVoltage } = req.body;
